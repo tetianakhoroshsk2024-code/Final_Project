@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Домашня пекарня</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Шапка -->
+  <header>
+    <h1>🍞 Домашня пекарня</h1>
+    <p>Свіжа випічка щодня з любов'ю</p>
+  </header>
+
+  <!-- Меню -->
+  <section class="menu">
+    <h2>Наше меню</h2>
+
+    <!-- TTS блок -->
+    <div class="tts-block">
+      <button class="tts-btn" onclick="readMenu()">🔊 Прослухати меню</button>
+      <div class="wave-container" id="wave-visual">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-icon">🥐</div>
+        <h3>Круасан</h3>
+        <p>Ніжний, хрусткий, з маслом</p>
+        <span class="price">25 грн</span>
+        <button onclick="addToCart('Круасан', 25)">Додати</button>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🍰</div>
+        <h3>Медівник</h3>
+        <p>Класичний домашній торт</p>
+        <span class="price">180 грн</span>
+        <button onclick="addToCart('Медівник', 180)">Додати</button>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🧁</div>
+        <h3>Капкейк</h3>
+        <p>З кремом та ягодами</p>
+        <span class="price">45 грн</span>
+        <button onclick="addToCart('Капкейк', 45)">Додати</button>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🍞</div>
+        <h3>Хліб</h3>
+        <p>Домашній, на заквасці</p>
+        <span class="price">60 грн</span>
+        <button onclick="addToCart('Хліб', 60)">Додати</button>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🍩</div>
+        <h3>Пончик</h3>
+        <p>З полуничним джемом</p>
+        <span class="price">30 грн</span>
+        <button onclick="addToCart('Пончик', 30)">Додати</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Кошик -->
+  <section class="cart">
+    <h2>🛒 Кошик</h2>
+    <ul id="cart-list">
+      <li class="empty">Кошик порожній</li>
+    </ul>
+    <p class="total">Сума: <strong id="total">0</strong> грн</p>
+    <button class="clear-btn" onclick="clearCart()">Очистити кошик</button>
+  </section>
+
+  <!-- Контакти + QR -->
+  <footer>
+    <div class="qr-section">
+      <h3>📲 Поділитися пекарнею</h3>
+      <p>Згенеруй QR-код та поділись з друзями</p>
+
+      <div class="qr-input-group">
+        <input type="text" id="qr-input"
+          value="https://myBakery.com"
+          placeholder="Введи посилання або текст" />
+      </div>
+
+      <div class="color-settings">
+        <div class="color-input">
+          <label>Колір коду</label>
+          <input type="color" id="fg-color" value="#3b2a1a" />
+          <span id="fg-color-hex">#3b2a1a</span>
+        </div>
+        <div class="color-input">
+          <label>Колір фону</label>
+          <input type="color" id="bg-color" value="#fdf6ec" />
+          <span id="bg-color-hex">#fdf6ec</span>
+        </div>
+      </div>
+
+      <button class="qr-btn" onclick="generateQR()">Згенерувати QR</button>
+
+      <div id="qr-box">
+        <img src="" id="qr-image" alt="QR Code" />
+        <a href="#" id="download-btn" download="bakery-qr.png">⬇️ Завантажити QR</a>
+      </div>
+    </div>
+
+    <div class="footer-info">
+      <p>📍 м. Львів | 📞 +38 (050) 123-45-67 | ✉️ bakery@email.com</p>
+      <p>© 2026 Домашня пекарня</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,331 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background-color: #8a4e1d;
+  color: #3b2a1a;
+}
+
+/* Шапка */
+header {
+  background-color: #573c25;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Меню */
+.menu {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.menu h2 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  color: #c8742a;
+}
+
+/* TTS блок */
+.tts-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.tts-btn {
+  background-color: #573c25;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.2s;
+}
+
+.tts-btn:hover {
+  background-color: #3b2a1a;
+}
+
+/* Хвиля TTS */
+.wave-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 36px;
+  visibility: hidden;
+}
+
+.wave-container.active {
+  visibility: visible;
+}
+
+.bar {
+  width: 4px;
+  height: 8px;
+  background-color: #c8742a;
+  border-radius: 4px;
+  animation: wave 1s ease-in-out infinite;
+}
+
+.bar:nth-child(2) { animation-delay: 0.1s; }
+.bar:nth-child(3) { animation-delay: 0.2s; }
+.bar:nth-child(4) { animation-delay: 0.3s; }
+.bar:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes wave {
+  0%, 100% { height: 8px; }
+  50% { height: 32px; }
+}
+
+/* Картки */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  width: 200px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.card p {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.price {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #c8742a;
+  margin-bottom: 12px;
+}
+
+.card button {
+  background-color: #c8742a;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.card button:hover {
+  background-color: #a85e20;
+}
+
+/* Кошик */
+.cart {
+  background: white;
+  margin: 0 20px 40px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cart h2 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  color: #c8742a;
+}
+
+#cart-list {
+  list-style: none;
+  margin-bottom: 16px;
+}
+
+#cart-list li {
+  padding: 6px 0;
+  border-bottom: 1px solid #f0e0cc;
+}
+
+.empty {
+  color: #aaa;
+  font-style: italic;
+}
+
+.total {
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+.clear-btn {
+  background-color: #e04040;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.clear-btn:hover {
+  background-color: #b83030;
+}
+
+/* Підвал */
+footer {
+  background-color: #3b2a1a;
+  color: #f0e0cc;
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+/* QR секція */
+.qr-section {
+  margin-bottom: 32px;
+}
+
+.qr-section h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.qr-section p {
+  opacity: 0.8;
+  margin-bottom: 16px;
+}
+
+.qr-input-group {
+  margin-bottom: 16px;
+}
+
+.qr-input-group input {
+  width: 100%;
+  max-width: 360px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.95rem;
+  background: #f0e0cc;
+  color: #3b2a1a;
+}
+
+.color-settings {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.color-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.color-input input[type="color"] {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: none;
+}
+
+.qr-btn {
+  background-color: #c8742a;
+  color: white;
+  border: none;
+  padding: 10px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+  margin-bottom: 20px;
+}
+
+.qr-btn:hover {
+  background-color: #a85e20;
+}
+
+#qr-box {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  animation: fadeIn 0.4s ease;
+}
+
+#qr-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 8px;
+  background: white;
+  padding: 6px;
+}
+
+#download-btn {
+  color: #f0e0cc;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border: 1px solid #f0e0cc;
+  padding: 6px 16px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+#download-btn:hover {
+  background-color: #f0e0cc;
+  color: #3b2a1a;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Інфо підвалу */
+.footer-info {
+  border-top: 1px solid #5a4030;
+  padding-top: 20px;
+}
